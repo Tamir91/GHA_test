@@ -28,10 +28,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: "Check minimal CMake version"
         env:
-            RESULT1: ${{ 3.7 <= 3.8 }}
-            RESULT2: ${{ 3.7 <= 3.12 }}
-            RESULT3: ${{ 3.7 <= 3.7 }}
-            RESULT4: ${{ 3.7 <= 2.6 }}
+            RESULT1: ${{ 37 <= 38 }}
+            RESULT2: ${{ 37 <= 312 }}
+            RESULT3: ${{ 37 <= 37 }}
+            RESULT4: ${{ 37 <= 26 }}
         run: |
             echo "RESULT1 $RESULT1"
             echo "RESULT2 $RESULT2"
