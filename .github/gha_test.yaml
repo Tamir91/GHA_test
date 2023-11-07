@@ -1,0 +1,29 @@
+name: static_analysis
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: ['**']
+
+jobs:
+
+minimal_cmake_version:
+
+  name: "Minimal CMake version"
+    timeout-minutes: 30
+    runs-on: ubuntu-22.04
+    steps:
+  
+     - name: "Check minimal CMake version"
+          env:
+            RESULT1: ${{ "3.7" <= 3.8 }}
+            RESULT2: ${{ "3.7" <= 3.12 }}
+            RESULT3: ${{ "3.7" <= 3.7 }}
+            RESULT4: ${{ "3.7" <= 2.6 }}
+
+          run: |
+            echo "RESULT1 $RESULT1"
+            echo "RESULT2 $RESULT2"
+            echo "RESULT3 $RESULT3"
+            echo "RESULT4 $RESULT4"
